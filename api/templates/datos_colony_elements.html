@@ -1,0 +1,109 @@
+{% extends "portal_cliente.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Datos Colonia - {{request.user}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header row no-gutters py-4">
+     <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+	    <span class="text-uppercase page-subtitle">Dashboard / <a href="{% url 'lista_proyectos' %}">Mis Proyectos </a>/ <a href="{{url_regreso}}">Imagenes</a>  </span>
+    	<h3 class="page-title"><i class="material-icons">book</i> Datos Colonia</h3>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<form class="form form-horizontal validate-form" method="post">{% csrf_token %} 
+			{{ form.non_field_errors }} 
+			<div class='form-group'>
+				<label class="col-sm-6 control-label control-label-required">Temperatura (Grados): </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.temperature class="form-control" data-rule-minlength="1" %}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Color: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.color class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Tamaño (mm): </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.size class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Forma: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.form class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Superficie: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.surface class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Borde: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.edge class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Elevación: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.elevation class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Crecimiento: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.growth class="form-control"%}
+                </div>
+			</div>
+
+			<div class='form-group'>
+				<label class="col-sm-4 control-label control-label-required">Observaciones: </label>
+                <div class='col-sm-12 controls'>
+                    {% render_field form.observation class="form-control"%}
+                </div>
+			</div>
+			<div class="float-right">
+				<a href="" class="btn btn-info"><i class="material-icons">keyboard_arrow_left</i> Regresar</a>
+				<button class="btn btn-success btn-md"><i class="material-icons">save</i>  Guardar</button>
+			</div>
+			<p></p>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<div class="row">
+			
+			<div>
+				<label style="color: #007bff"><strong>COLONIAS ENCONTRADAS:</strong> {{instance_colony_elements.photography.total}} </label>
+			</div>
+			<div class="col-md-12">
+				<a target="_blank" href="{{instance_colony_elements.photography.url_imagen}}"><img src="{{instance_colony_elements.photography.url_imagen}}" width="300px" height="300px" class="rounded"></a>
+			</div>
+			
+			<div class="col-md-12">
+				<br>
+				<a href="{{instance_colony_elements.photography.url_contado}}" target="_blank"><img src="{{instance_colony_elements.photography.url_contado}}" width="300px" height="300px" class="rounded"></a>
+				
+			</div>
+		</div>
+	</div>
+	<p></p>
+</div>
+
+{% endblock %}

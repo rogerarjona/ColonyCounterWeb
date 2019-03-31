@@ -1,0 +1,59 @@
+{% extends "index.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Mapa de Sitio</title>
+{% endblock %}
+
+{% block content %}
+<h3>Mapa de Sitio</h3>
+
+<div class="row"> 
+	<div class="col-3">
+		<h5>
+		<ol class="text-lg">
+			<li><a href="{% url 'index' %}">Inicio</a> </li>
+				<ul>
+					<li>Dirección</li>
+				</ul>
+			<li><a href="{% url 'servicios' %}">Servicios</a></li>
+			<ul>
+				<li>Consulta Médica</li>
+				<li>Consulta Silvestre</li>
+				<li>Emergencias</li>
+				<li>Hospitalización</li>
+				<li>Cirugía</li>
+				<li>Estética</li>
+				<li>Etología</li>
+				<li>Pensión</li>
+				<li>Tienda animal</li>
+				<li>Transporte animal</li>
+				<li>Microchips</li>
+			</ul>
+			<li><a href="{% url 'nosotros' %}">¿Quienes Somos?</a></li>
+			<li><a href="{% url 'contacto' %}">Contacto</a></li>
+			<li><a href="{% url 'dashboard' %}">Portal del Cliente</li>
+		</ol>
+		</h5>
+	</div>
+	
+	{% if request.path != "/mapa-de-sitio/" %}
+	<div class="col-9">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="pull-left">
+					<h2>Oops.. No encontramos lo que buscabas</h2>
+					<p class="text-info"><strong>Podria interesarte alguna otra parte de nustro sitio!</strong></p>
+				</div>
+				<div class="col-md-4">
+					<img src="{% static 'images/404.gif' %}">
+				</div>
+				<div class="col-md-6">
+					<p class="text-info">Podria interesarte algo de nuestra pagina!</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

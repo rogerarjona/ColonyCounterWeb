@@ -1,0 +1,103 @@
+
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Documentación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{% static 'dashboard/styles/shards-dashboards.1.1.0.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/styles/extras.1.1.0.min.css' %}">
+    <script async defer src="{% static 'dashboard/scripts/buttons.js' %}"></script>
+  </head>
+  <body class="h-100">
+  	<div class="">
+  		<nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+            <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                <div class="input-group input-group-seamless ml-3">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div> -->
+                  <div class="navbar form-control">
+                  	<img src="{% static 'images/Logo-Happy-Pets-large2.png' %}" width="240" height="60"> Lo mejor para tu mascota! Lo encontraras con nosotros!
+                  	<a class="btn btn-info" href="{% url 'index' %}"><i class="fa fa-home"></i> Inicio</a>
+                  </div>
+                </div>
+            </div>
+
+        </nav>
+  		<div class="row">
+
+  			<div class="col-md-1"></div>
+  			<div class="col-md-10 main-content-container ">
+
+				<div class="page-header row no-gutters py-4">
+				
+			      <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+			        <h3 class="page-title"><i class="fas fa-calendar"></i> Preguntas Frecuentes</h3>
+			      </div>
+			    </div>
+
+				<div class="row">
+<div class="col-3">
+		<h5>
+		<ol class="text-lg">
+			<li><a href="{% url 'index' %}">Inicio</a> </li>
+				<ul>
+					<li>Dirección</li>
+				</ul>
+			<li><a href="{% url 'servicios' %}">Servicios</a></li>
+			<ul>
+				<li>Consulta Médica</li>
+				<li>Consulta Silvestre</li>
+				<li>Emergencias</li>
+				<li>Hospitalización</li>
+				<li>Cirugía</li>
+				<li>Estética</li>
+				<li>Etología</li>
+				<li>Pensión</li>
+				<li>Tienda animal</li>
+				<li>Transporte animal</li>
+				<li>Microchips</li>
+			</ul>
+			<li><a href="{% url 'nosotros' %}">¿Quienes Somos?</a></li>
+			<li><a href="{% url 'contacto' %}">Contacto</a></li>
+			<li><a href="{% url 'dashboard' %}">Portal del Cliente</li>
+		</ol>
+		</h5>
+	</div>
+	
+	<div class="col-9">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="pull-left">
+					<h2>Oops.. No encontramos lo que buscabas</h2>
+					<p class="text-info"><strong>Podria interesarte alguna otra parte de nustro sitio!</strong></p>
+				</div>
+				<div class="col-md-4">
+					<img src="{% static 'images/404.gif' %}">
+				</div>
+				<div class="col-md-6">
+					<p class="text-info">Podria interesarte algo de nuestra pagina!</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/js/popper.min.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		{% block metatags %}{% endblock %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/fontaweasome/css/all.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+  		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  		<link rel="stylesheet" href="{% static 'assets/css/dataTables.bootstrap4.min.css' %}">
+  		<link rel="stylesheet" href="{% static 'assets/css/main2.css' %}">
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<div id="header">
+				<nav id="nav">
+					<ul>
+						<!-- <i class="fab fa-font-awesome"></i> -->
+						<li id="menu1" class="current"><a href="{% url 'index' %}">Dashboard</a></li>
+						<li id="menu2"><a href="{% url 'lista_citas' %}">Citas</a></li>
+						<li class="nav-item dropdown test">
+					        <a class="nav-link dropdown-toggle test" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					        	<img width="23" height="23" alt="" src="{{ user.perfilusuario.avatar.thumbnail.url }}">
+					         	<span>{{request.user.username}}</span>
+					        </a>
+					        <div class="dropdown-menu divtest"  aria-labelledby="navbarDropdownMenuLink">
+					          <a class="dropdown-item clase1" href="{% url 'account_login' %}">Perfil</a>
+					          <a class="dropdown-item" href="{% url 'account_signup' %}">Cambiar Contraseña</a>
+					          <a class="dropdown-item" href="{% url 'lista_citas' %}">Cerrar Sesión</a>
+					        </div>
+					     </li>
+						<!-- Example single danger button -->
+						<!-- <div class="btn-group">
+						  <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   Portal
+						  </button>
+						  <div id="mydiv" class="dropdown-menu">
+						  	{% if request.user.is_authenticated %}
+						  	<a class="dropdown-item btn-dark" href="{% url 'perfilusuario' %}">Perfil</a>
+						  	<a class="dropdown-item btn-dark" href="{% url 'lista_citas' %}">Citas</a>
+						  	<div class="dropdown-divider"></div>
+						    <a class="dropdown-item" href="{% url 'account_logout' %}">Cerrar Sesion</a>
+						  	{% else %}
+						    <a class="dropdown-item btn-dark" href="{% url 'account_login' %}">Iniciar Sesion</a>
+						    <div class="dropdown-divider"></div>
+						    <a class="dropdown-item" href="{% url 'account_signup' %}">Crear Cuenta</a>
+						    {% endif %}
+						  </div>
+						</div>
+ -->						
+					     
+					</ul>
+				</nav>
+			</div>
+
+			<section class="wrapper style1">
+				<div class="container">
+					<div id="content">
+
+						{% for message in messages %}
+                      	<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          		<span aria-hidden="true">&times;</span>
+                        	</button>
+                        	{{ message|safe }}
+                      	</div>
+                    	{% endfor %}
+
+                    	{% block content %}
+        							
+        				{% endblock %}
+                    	<!-- Carrousel de imagenes -->
+
+					</div>
+				</div>
+			</section>
+			
+			<!-- <section class="wrapper style1">
+				<div class="container">
+					<div class="row gtr-200">
+						<section class="col-4 col-12-narrower">
+							<div class="box highlight">
+								<i class="icon major fa-paper-plane"></i>
+								<h3>This Is Important</h3>
+								<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+							</div>
+						</section>
+						<section class="col-4 col-12-narrower">
+							<div class="box highlight">
+								<i class="icon major fa-pencil"></i>
+								<h3>Also Important</h3>
+								<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+							</div>
+						</section>
+						<section class="col-4 col-12-narrower">
+							<div class="box highlight">
+								<i class="icon major fa-wrench"></i>
+								<h3>Probably Important</h3>
+								<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Highlights -->
+				
+
+			<!-- Gigantic Heading -->
+				<!-- <section class="wrapper style2">
+					<div class="container">
+						<header class="major">
+							<h2>A gigantic heading you can use for whatever</h2>
+							<p>With a much smaller subtitle hanging out just below it</p>
+						</header>
+					</div>
+				</section> -->
+
+			<!-- Posts -->
+				<!-- <section class="wrapper style1">
+					<div class="container">
+						<div class="row">
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="#" class="image left"><img src="images/pic01.jpg" alt="" /></a>
+									<div class="inner">
+										<h3>The First Thing</h3>
+										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+									</div>
+								</div>
+							</section>
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="#" class="image left"><img src="images/pic02.jpg" alt="" /></a>
+									<div class="inner">
+										<h3>The Second Thing</h3>
+										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="row">
+							<section class="col-6 col-12-narrower">
+								<div class="box post">
+									<a href="#" class="image left"><img src="images/pic03.jpg" alt="" /></a>
+									<div class="inner">
+										<h3>The Third Thing</h3>
+										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+									</div>
+								</div>
+							</section>
+							<section class="col- col-12-narrower">
+								<div class="box post">
+									<a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+									<div class="inner">
+										<h3>The Fourth Thing</h3>
+										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section> -->
+
+			<!-- CTA -->
+<!-- 				<section id="cta" class="wrapper style3">
+					<div class="container">
+						<header>
+							<h2>Are you ready to continue your quest?</h2>
+							<a href="#" class="button">Insert Coin</a>
+						</header>
+					</div>
+				</section> -->
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+							<!-- <section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>Links to Stuff</h3>
+								<ul class="links">
+									<li><a href="#">Mattis et quis rutrum</a></li>
+									<li><a href="#">Suspendisse amet varius</a></li>
+									<li><a href="#">Sed et dapibus quis</a></li>
+									<li><a href="#">Rutrum accumsan dolor</a></li>
+									<li><a href="#">Mattis rutrum accumsan</a></li>
+									<li><a href="#">Suspendisse varius nibh</a></li>
+									<li><a href="#">Sed et dapibus mattis</a></li>
+								</ul>
+							</section>
+							<section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>More Links to Stuff</h3>
+								<ul class="links">
+									<li><a href="#">Duis neque nisi dapibus</a></li>
+									<li><a href="#">Sed et dapibus quis</a></li>
+									<li><a href="#">Rutrum accumsan sed</a></li>
+									<li><a href="#">Mattis et sed accumsan</a></li>
+									<li><a href="#">Duis neque nisi sed</a></li>
+									<li><a href="#">Sed et dapibus quis</a></li>
+									<li><a href="#">Rutrum amet varius</a></li>
+								</ul>
+							</section> -->
+<!-- 							<section class="col-6 col-12-narrower">
+								<h3>Get In Touch</h3>
+								<form>
+									<div class="row gtr-50">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" class="button alt" value="Send Message" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section> -->
+						</div>
+					</div>
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Clinica Veterinaria "Happy Pets". Todos los derechos reservados</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'assets/js/popper.min.js'%}"></script>
+			<script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+			<style type="text/css">
+				#mydiv {
+				  background:transparent;
+				}
+/*				#nav-sesion a{
+					padding: 0 0.5em 1.3em 0.5em;	
+					background-color: tomato; 
+				}*/
+				.clase1 {
+					padding: 0 0.5em 1.3em 0.5em;	!important
+				}
+			</style>
+
+			{% block resources %}
+			{% endblock %}
+
+	</body>
+</html>

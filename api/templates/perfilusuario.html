@@ -1,0 +1,42 @@
+{% extends "index.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Perfil de Usuario - {{request.user}}</title>
+{% endblock %}
+
+{% block content %}
+
+	<header>
+		<h2><i class="fas fa-user "></i> Perfil de {{request.user}}</h2>
+	</header>
+
+	<form class="form form-horizontal validate-form" method="post">{% csrf_token %}
+
+		<div class='form-group'>  
+            <label class="col-md-4 control-label control-label-required ">Nombre</label>
+            <div class='col-lg-12 col-md-12 controls'>
+                {% render_field user_form.first_name class="form-control input-sm" data-rule-required="true" %} 
+                {{ user_form.non_field_errors }}
+                {{ user_form.first_name.errors }}
+            </div>
+        </div>
+        <div class='form-group'>  
+            <label class="col-md-4 control-label control-label-required ">Apellidos</label>
+            <div class='col-lg-12 col-md-12 controls'>
+                {% render_field user_form.last_name class="form-control input-sm" data-rule-required="true" %} 
+                {{ user_form.non_field_errors }}
+                {{ user_form.last_name.errors }}
+            </div>
+        </div>
+        <div class='form-group'>  
+            <label class="col-md-4 control-label control-label-required ">E-mail</label>
+            <div class='col-lg-12 col-md-12 controls'>
+                {% render_field user_form.email class="form-control input-sm" data-rule-required="true" %} 
+                {{ user_form.non_field_errors }}
+                {{ user_form.email.errors }}
+            </div>
+        </div>
+        
+		
+	</form>
+{% endblock %}

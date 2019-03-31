@@ -1,0 +1,87 @@
+{% extends "index.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Nosotros</title>
+{% endblock %}
+
+{% block content %}
+<h3>Nuestro Equipo de Trabajo</h3>
+<article>
+	<div class="row">
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet1.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Antonio Jesús Villegas Bravo</h5>
+   				<p class="card-text text-info">MEDICINA DE EXÓTICOS</p>
+			  </div>
+			</div>
+		</section>
+
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet2.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Concepción Ayala Pando Crespo</h5>
+   				<p class="card-text text-info">MEDICINA FELINA Y ANESTESIA</p>
+			  </div>
+			</div>
+		</section>
+
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet3.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Natividad Muñoz Marín</h5>
+   				<p class="card-text text-info">CIRUGÍA MÍNIMO-INVASIVA Y FISIOTERAPIA</p>
+			  </div>
+			</div>
+		</section>
+
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet4.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Joaquín Albaladejo Velasco</h5>
+   				<p class="card-text text-info">ODONTOLOGÍA Y CIRUGÍA MAXILOFACIAL</p>
+			  </div>
+			</div>
+		</section>
+
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet5.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Ana Fernández Serrano</h5>
+   				<p class="card-text text-info">CIRUGÍA DE TEJIDOS BLANDOS Y ONCOLÓGICA</p>
+			  </div>
+			</div>
+		</section>
+
+		<section class="col-4 col-12-narrower">
+			<div class="card round" style="width: 20rem;">
+			  <img class="card-img-top" src="{% static 'images/vet6.jpg' %}" alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title">Alejandro Escribano Mosqueda Arjona</h5>
+   				<p class="card-text text-info">ECOGRAFÍA Y CARDIOLOGÍA</p>
+			  </div>
+			</div>
+		</section>
+	</div>
+
+</article>
+
+{% endblock %}
+
+{% block resources %}
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			$("#menu1").removeClass("current");
+			$("#menu2").removeClass("current");
+			$("#menu3").addClass("current");
+			$("#menu4").removeClass("current");
+		});
+	</script>
+
+	{% endblock %}

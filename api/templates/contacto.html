@@ -1,0 +1,63 @@
+{% extends "index.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Contacto</title>
+{% endblock %}
+
+{% block content %}
+
+<h3>No dudes en comunicarte con nosotros, llama a nuestros telefonos, o comunicate por correo electronico! Nuestro personal experto respondera tus dudas.</h3>
+<div><p class="p-3"></p></div>
+<article>
+	<div class="row">
+	<section class="col-4 col-12-narrower">
+
+<div class="card round" style="width: 20rem;">
+  <img class="card-img-top" src="{% static 'images/dog-phone.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    <i class="fa fa-mobile fa-2x">  Cel: 9985933199</i> 
+    <i class="fa fa-phone  fa-2x"> Tel: 132-41-52</i> 
+  </div>
+</div>
+	</section>
+	<section class="col-6 col-12-narrower">
+	
+			<form method="post" action="{% url 'contacto' %}">{% csrf_token %}
+				<div class="row gtr-50">
+					<div class="col-6 col-12-mobilep">
+						<input type="text" name="name" id="name" placeholder="Tu nombre" />
+					</div>
+					<div class="col-6 col-12-mobilep">
+						<input type="email" name="email" id="email" placeholder="Correo Electronico" />
+					</div>
+					<div class="col-12">
+						<textarea name="message" id="message" placeholder="Tu Mensaje" rows="5"></textarea>
+					</div>
+					<div class="col-12">
+						<ul class="actions">
+							<li><input type="submit" class="button alt" value="Enviar" /></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+			<div class="alert alert-info p-4" role="alert">
+			  Horario de atención: <strong>24 HRS</strong>
+			</div>
+	</section>
+
+	</div>
+
+{% endblock %}
+
+{% block resources %}
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			$("#menu1").removeClass("current");
+			$("#menu2").removeClass("current");
+			$("#menu3").removeClass("current");
+			$("#menu4").addClass("current");
+		});
+	</script>
+
+	{% endblock %}

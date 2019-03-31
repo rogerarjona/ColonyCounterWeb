@@ -1,0 +1,114 @@
+
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Documentación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{% static 'dashboard/styles/shards-dashboards.1.1.0.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/styles/extras.1.1.0.min.css' %}">
+    <script async defer src="{% static 'dashboard/scripts/buttons.js' %}"></script>
+  </head>
+  <body class="h-100">
+  	<div class="">
+  		<nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+            <div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                <div class="input-group input-group-seamless ml-3">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </div>
+                  </div> -->
+                  <div class="navbar form-control">
+                  	<img src="{% static 'images/Logo-Happy-Pets-large2.png' %}" width="240" height="60"> Lo mejor para tu mascota! Lo encontraras con nosotros!
+                  	<a class="btn btn-info" href="{% url 'index' %}"><i class="fa fa-home"></i> Inicio</a>
+                  </div>
+                </div>
+            </div>
+
+        </nav>
+  		<div class="row">
+
+  			<div class="col-md-1"></div>
+  			<div class="col-md-10 main-content-container ">
+
+				<div class="page-header row no-gutters py-4">
+				
+			      <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+			        <h3 class="page-title"><i class="fas fa-calendar"></i> Preguntas Frecuentes</h3>
+			      </div>
+			    </div>
+
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+		                <div class="card card-small">
+		                  <div class="card-header border-bottom">
+		                    <h6 class="m-0">Me gustaría traer a mi mascota para una consulta. ¿Necesito una cita?</h6>
+		                  </div>
+		                  <div class="card-body pt-0">
+		                    <p class="card-text">Para reducir el tiempo de espera en la clínica, siempre recomendamos hacer una cita. No obstante, si es urgente, puede acudir en cualquier momento durante nuestro horario de apertura, pero es posible que tenga que esperar mientras atendemos a los clientes que han realizado la reserva con anticipación. Por supuesto, en el caso de una emergencia, lo atenderán de inmediato. Se pueden hacer citas llamando al 971 695 108 o enviándonos un correo electrónico a info@happypets.com</p>
+		                  </div>
+		                </div>
+		            </div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+		                <div class="card card-small">
+		                  <div class="card-header border-bottom">
+		                    <h6 class="m-0">¿Como realizar una cita?</h6>
+		                  </div>
+		                  <div class="card-body pt-0">
+		                    <p class="card-text">Necesita tener una cuenta en nuestra plataforma. una vez creada, ingrese a la sección de "Mis citas" en el menu lateral izquierdo, visualizara una tabla y un botón verde con el texto "Agendar Cita". De click al botón mencionado, sera redirigido hacia un formulario donde podrá elegir una fecha y hora, dependiendo de la disponibilidad, para que su mascota sea atendida.</p>
+		                  </div>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+		                <div class="card card-small">
+		                  <div class="card-header border-bottom">
+		                    <h6 class="m-0">Realizan visitas a domicilio?</h6>
+		                  </div>
+		                  <div class="card-body pt-0">
+		                    <p class="card-text">Nos complace ver a sus mascotas en casa si es necesario, sin embargo, los casos complicados que requieren investigación siempre se ven mejor en la clínica donde se encuentra todo nuestro equipo. Siempre estamos disponibles para discutir la mejor opción para usted de antemano si tiene alguna duda.</p>
+		                  </div>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+		                <div class="card card-small">
+		                  <div class="card-header border-bottom">
+		                    <h6 class="m-0">¿Ofrecen servicio de emergencia las 24 horas?</h6>
+		                  </div>
+		                  <div class="card-body pt-0">
+		                    <p class="card-text">Como parte de ofrecer un servicio veterinario completo, tenemos un veterinario de guardia las 24 horas del día, los 365 días del año. Si la clínica está cerrada, puede llamar a cualquier hora del día en caso de una emergencia. Nuestro número de emergencia es 634 524 440.</p>
+		                  </div>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+		                <div class="card card-small">
+		                  <div class="card-header border-bottom">
+		                    <h6 class="m-0">Mi mascota necesita cirugía, ¿qué debo hacer de antemano?</h6>
+		                  </div>
+		                  <div class="card-body pt-0">
+		                    <p class="card-text">Para una anestesia general, recomendamos que su mascota no ingiera alimentos sólidos a partir de las 9:00 pm de la noche anterior. El agua se puede dejar disponible durante la noche y primera hora de la mañana. En general, tratamos de programar cirugías por la mañana. Debido a que utilizamos los últimos protocolos de anestesia, nuestros pacientes generalmente se despiertan rápidamente y con frecuencia estarán en casa antes de la hora del almuerzo. Nuestro objetivo es hacer que la experiencia sea lo más libre de estrés posible y hacer que regresen a un entorno familiar lo más rápido posible. Antes del ingreso, los pacientes reciben un examen clínico y un tranquilizante con un analgésico para reducir la dosis de anestesia necesaria y asegurar que se despierten tranquilos y sin dolor.</p>
+		                  </div>
+		                </div>
+		            </div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'assets/js/popper.min.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+  </body>
+</html>

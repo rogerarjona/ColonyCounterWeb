@@ -1,0 +1,36 @@
+{% extends "portal_cliente.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Imagenes - {{nombre_proyecto}} - {{request.user}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header row no-gutters py-4">
+     <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+	    <span class="text-uppercase page-subtitle">Dashboard / <a href="{% url 'lista_proyectos' %}">Mis Proyectos</a> </span>
+    	<h3 class="page-title"><i class="material-icons">book</i> Imagenes - {{nombre_proyecto}}</h3>
+    </div>
+</div>
+
+<div class="row">
+	{% for imagen in lista_imagenes %}
+	<div class="col-sm-3">
+		<div class="card">
+	  <img class="card-img-top" src="{{imagen.url_imagen}}" alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title">{{imagen.created|date:"F d Y P"}}</h5>
+	    <p class="card-text">Colonias Encontradas: {{imagen.total}}</p>
+	    <div class="text-center">
+	    	<a href="{% url 'datos_colony_elements' imagen.id %}" class="btn btn-primary">Visualizar Datos</a>
+	    </div>
+	    
+	  </div>
+	</div>
+	<p></p>
+	</div>
+
+	{% endfor %}
+</div>
+
+{% endblock %}

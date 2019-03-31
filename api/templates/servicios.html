@@ -1,0 +1,183 @@
+{% extends "index.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Servicios - {{request.user}}</title>
+{% endblock %}
+
+{% block content %}
+
+<article>
+<!-- 	<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+	 -->
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-stethoscope fa-lg"></i> Consulta Médica</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Contamos con equipo médico profesional que ofrece una atención especializada referente a medicina preventiva, tratamiento médico, diagnostico de enfermedades,y seguimiento de casos clínicos.</p>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="col-md-4">
+			<div class="card ">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-dragon fa-lg"></i> Consulta Silvestre</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Contamos con experiencia medica para la atención de diferentes especies como primates, aves, roedores, quelonios, reptiles..</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-medkit fa-lg"></i> Emergencias</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Nuestro servicio es 24 horas los 365 días del año, ofreciendo atención médica en el momento que se requiera.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-hospital-alt  fa-lg"></i> Hospitalización</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Contamos con un servicio especializado para el cuidado de tu mascota en condiciones de enfermedad, con atención medica continua.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-user-md fa-lg"></i> Cirugía</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Ofrecemos un servicio quirúrgico de calidad para las mascotas que así lo requieran.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-syringe fa-lg"></i> Vacunas</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">La medicina preventiva de las mascotas es la más importante, ya que ésta ayuda a evitar enfermedades.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-dog  fa-lg"></i> Estética</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">La higiene de nuestras mascotas es un punto muy importante para evitar enfermedades, por lo cual contamos con baño y peluquería profesional, en el cual siempre se ofrece un trato amable a la mascota.</p>
+			  </div>
+			</div>
+		</div>
+
+<!-- 		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-stethoscope fa-lg"></i> Cirugía</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Ofrecemos un servicio quirúrgico de calidad para las mascotas que así lo requieran.</p>
+			  </div>
+			</div>
+		</div> -->
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-heart  fa-lg"></i> Etología</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Ofrecemos consulta etológica para facilitar el entendimiento conductual de nuestras mascotas.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-plane  fa-lg"></i> Pensión</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Cuando tengas necesidad de salir de viaje, nosotros podemos cuidar de tus mascotas en áreas especializadas para que se sientan confortables.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="icon fa-paw  fa-lg"></i> Tienda animal</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Contamos con venta de alimento, accesorios para ofrecer una mejor vida a nuestras mascotas.</p>
+			  </div>
+			</div>
+		</div>
+		<!-- <i class="fas fa-igloo fa-7x"></i> -->
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fas fa-truck-moving  fa-lg"></i> Transporte animal</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Con previa cita, podemos recoger a tu mascota para su servicio de estética, y también realizar consultas a domicilio. El servicio de transporte aplica para la zona de Boulevares, Lomas verdes, Ciudad Satélite, Echegaray y zonas aledañas.</p>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+			  <div class="card-header bg-info">
+			    <h3 class="text-light"><i class="fab fa-keycdn fa-lg"></i> Microchips</h5> 
+			  </div>
+			  <div class="card-body">
+			    <p class="card-text">Podemos ayudarte con el cuidado de tu mascota colocando un chip de geolocalizacion con el cual, via satelite, puedes encontrarlo desde tu celulares por medio de nuestra aplicacion.</p>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+
+</article>
+
+{% endblock %}
+
+{% block resources %}
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			$("#menu1").removeClass("current");
+			$("#menu2").addClass("current");
+			$("#menu3").removeClass("current");
+			$("#menu4").removeClass("current");
+			
+		});
+	</script>
+	<style type="text/css">
+		.card {
+			height: 250px;
+		}
+	</style>
+{% endblock %}

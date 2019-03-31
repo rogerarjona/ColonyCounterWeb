@@ -1,0 +1,46 @@
+{% extends "portal_cliente.html" %}{% load static from staticfiles %}  {% load i18n widget_tweaks %}
+
+{% block metatags %}
+    <title>Crear Proyecto - {{request.user}}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header row no-gutters py-4">
+     <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+	    <span class="text-uppercase page-subtitle">Dashboard /<a href="{% url 'lista_proyectos' %}">Mis Proyectos</a> </span>
+    	<h3 class="page-title"><i class="material-icons">book</i> Crear Proyecto</h3>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<form class="form form-horizontal validate-form" method="post">{% csrf_token %}
+			<div class='form-group offset-md-2'>
+				<label class="col-sm-4 control-label control-label-required">Nombre de Proyecto: </label>
+                <div class='col-sm-8 controls'>
+                    {% render_field form.name class="form-control" data-rule-minlength="1" %}
+                </div>
+			</div>
+
+			<div class='form-group offset-md-2'>
+				<label class="col-sm-4 control-label control-label-required">Descripcion: </label>
+                <div class='col-sm-8 controls'>
+                    {% render_field form.descripcion class="form-control" data-rule-minlength="1" %}
+                </div>
+			</div>
+
+			<div class="form-group offset-md-2">
+				<div class='col-sm-8 controls'>
+					<a href="{% url 'lista_proyectos' %}" class="btn btn-info"><i class="material-icons">keyboard_arrow_left</i> Regresar</a>
+					<button class="btn btn-success"><i class="material-icons">save</i>   Guardar</button>
+				</div>
+			</div>
+
+		</form>
+
+		
+	</div>
+</div>
+
+{% endblock %}
